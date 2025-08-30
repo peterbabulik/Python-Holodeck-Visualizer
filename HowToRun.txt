@@ -1,0 +1,67 @@
+# How to Run the Python Holodeck Visualizer
+
+This application consists of two parts: a Python backend server and a Node.js frontend.
+
+## Running the Application (Recommended)
+
+The easiest way to run the application is to use the provided npm script which starts both servers concurrently.
+
+1.  **Open a terminal in the `mutationHolodeck` directory.**
+2.  **Run the following command:**
+    ```bash
+    npm run dev
+    ```
+    This will start both the frontend and the backend. You can then access the application at http://localhost:5173 (or whatever URL Vite provides).
+
+## Running the Parts Separately
+
+If you want to manage the frontend and backend servers independently, you can run them in separate terminals.
+
+### Python Backend Server
+
+1.  **Navigate to the `mutationHolodeck` directory.**
+2.  **Run the server using the virtual environment's Python interpreter:**
+    ```bash
+    ../../venv/bin/python server.py
+    ```
+    The server will start and listen on http://127.0.0.1:5001.
+
+### Node.js Frontend Server
+
+1.  **Open a new terminal in the `mutationHolodeck` directory.**
+2.  **Run the following command:**
+    ```bash
+    npm run vite
+    ```
+    This will start the frontend development server, usually on http://localhost:5173.
+
+## Killing and Restarting the Python Server
+
+How you stop the server depends on how you started it.
+
+### If you used `npm run dev`:
+
+Stopping the `npm run dev` command (e.g., by pressing `Ctrl+C` in its terminal) will stop **both** the frontend and backend servers. You can then restart both by running `npm run dev` again.
+
+### If you ran the Python server separately:
+
+You can stop the server by pressing `Ctrl+C` in the terminal where it is running. To restart it, simply run the command again:
+```bash
+../../venv/bin/python server.py
+```
+
+### Finding and Killing the Process Manually (Linux/macOS)
+
+If the server is running in the background and you need to stop it, you can find and kill the process directly.
+
+1.  **Find the Process ID (PID) of the Python server:**
+    ```bash
+    ps aux | grep "[p]ython server.py"
+    ```
+    (The `[p]` helps to exclude the `grep` command itself from the results). This will show you the running server process.
+
+2.  **Kill the process using its PID:**
+    ```bash
+    kill <PID>
+    ```
+    Replace `<PID>` with the process ID you found in the previous step.

@@ -1,0 +1,5 @@
+{
+  "name": "Python Holodeck Visualizer",
+  "description": "An interactive 3D visualization of Python code execution flow. Upload a Python script, and watch as its structure is transformed into a 3D graph. Trace the execution path line-by-line in an immersive holodeck environment.",
+  "requestFramePermissions": []
+}
