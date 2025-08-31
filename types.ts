@@ -3,6 +3,7 @@ export interface GraphNode {
   id: number;
   code: string;
   position: [number, number, number];
+  type?: string; 
 }
 
 export interface GraphEdge {
